@@ -1,0 +1,10 @@
+[
+ {"name":"Andheri Subway","lat":19.1197,"lng":72.8464,"elevation_m":6,"drain_capacity_mm_hr":25,"blockage_pct":30,"curve_number":92},
+ {"name":"Hindmata (Dadar)","lat":19.0176,"lng":72.8447,"elevation_m":3,"drain_capacity_mm_hr":25,"blockage_pct":35,"curve_number":94},
+ {"name":"Sion Circle","lat":19.0390,"lng":72.8619,"elevation_m":4,"drain_capacity_mm_hr":25,"blockage_pct":25,"curve_number":92},
+ {"name":"Kurla (LBS Road)","lat":19.0728,"lng":72.8826,"elevation_m":4,"drain_capacity_mm_hr":22,"blockage_pct":40,"curve_number":93},
+ {"name":"Milan Subway (Santacruz)","lat":19.0822,"lng":72.8416,"elevation_m":5,"drain_capacity_mm_hr":25,"blockage_pct":30,"curve_number":92},
+ {"name":"Worli Naka","lat":19.0176,"lng":72.8174,"elevation_m":3,"drain_capacity_mm_hr":30,"blockage_pct":20,"curve_number":91},
+ {"name":"Bandra (Mithi River side)","lat":19.0653,"lng":72.8655,"elevation_m":2,"drain_capacity_mm_hr":20,"blockage_pct":45,"curve_number":90},
+ {"name":"Chembur","lat":19.0522,"lng":72.9005,"elevation_m":8,"drain_capacity_mm_hr":28,"blockage_pct":15,"curve_number":88}
+]

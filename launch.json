@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Flood Predictor",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/server.py",
+      "cwd": "${workspaceFolder}/backend",
+      "console": "integratedTerminal"
+    }
+  ]
+}

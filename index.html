@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micro-Drainage &amp; Localized Flood Predictor</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Micro-Drainage &amp; Localized Flood Predictor</h1>
+    <p class="sub">Street-level flood risk from live rainfall, drain condition and public reports</p>
+  </div>
+  <div class="actions">
+    <span id="updated" class="muted">Loading…</span>
+    <button id="btnLocate" class="btn primary">Check my location</button>
+    <button id="btnNotify" class="btn">Turn on alerts</button>
+    <button id="btnRefresh" class="btn">Refresh live data</button>
+  </div>
+</header>
+
+<div id="banner" class="banner" hidden></div>
+<div id="locResult" class="loc" hidden></div>
+
+<main>
+  <section class="mapwrap" aria-label="Flood risk map">
+    <div id="map"></div>
+    <ul class="legend" aria-label="Risk levels">
+      <li><i style="background:var(--low)"></i>Low</li>
+      <li><i style="background:var(--mod)"></i>Moderate</li>
+      <li><i style="background:var(--high)"></i>High</li>
+      <li><i style="background:var(--sev)"></i>Severe</li>
+    </ul>
+  </section>
+
+  <aside>
+    <section class="panel">
+      <h2>Alerts</h2>
+      <ul id="alerts" class="alerts"><li class="muted">No alerts yet.</li></ul>
+    </section>
+    <section class="panel">
+      <h2 id="detailTitle">Select a zone on the map</h2>
+      <div id="detail" class="muted">Click a circle to see live readings and the risk trend.</div>
+      <svg id="chart" viewBox="0 0 320 110" role="img" aria-label="Risk trend" hidden></svg>
+    </section>
+  </aside>
+</main>
+
+<section class="panel wide">
+  <h2>Live data by zone</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Zone</th><th>Risk</th><th>Score</th><th>Water depth</th><th>Rain now</th><th>Last 24 h</th><th>Next 3 h</th><th>Drain blockage</th></tr></thead>
+      <tbody id="zoneRows"></tbody>
+    </table>
+  </div>
+</section>
+
+<div class="two">
+  <section class="panel">
+    <h2>Report flooding</h2>
+    <p class="muted">Click the map to place your report, or use your location. Reports raise the risk score of the nearest zone for 6 hours.</p>
+    <label>Location <input id="repLoc" readonly placeholder="Click the map to choose"></label>
+    <label>Water level on the road (cm) <input id="repLevel" type="number" min="0" max="300" value="10"></label>
+    <label>What do you see? <input id="repDesc" maxlength="300" placeholder="e.g. Drain overflowing near the bus stop"></label>
+    <div class="row">
+      <button id="btnRepGeo" class="btn">Use my location</button>
+      <button id="btnRepSend" class="btn primary">Send report</button>
+    </div>
+    <p id="repMsg" class="muted" aria-live="polite"></p>
+  </section>
+
+  <section class="panel">
+    <h2>Summary report</h2>
+    <button id="btnReport" class="btn">Generate report</button>
+    <pre id="reportText" class="report" hidden></pre>
+
+    <h2 class="gap">Storm simulator</h2>
+    <p class="muted">Not raining today? Test the system with a made-up storm. Press Refresh live data to go back to real data.</p>
+    <div class="row">
+      <select id="simLevel" aria-label="Rain intensity">
+        <option value="15">Moderate rain (15 mm/h)</option>
+        <option value="35" selected>Heavy rain (35 mm/h)</option>
+        <option value="70">Extreme rain (70 mm/h)</option>
+      </select>
+      <button id="btnSim" class="btn">Run simulation</button>
+    </div>
+  </section>
+</div>
+
+<footer class="muted">Risk scores are decision-support estimates from open weather data and local drain settings, not official warnings. Follow the municipal authority in an emergency.</footer>
+
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
